@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :teachers, controllers: {
+    registrations: 'teachers/registrations'
+  }
+  devise_for :employees, controllers: {
+    registrations: 'employees/registrations'
+  }
+  resources :reports, only: [:index]
+  root to: 'reports#index'
 end
