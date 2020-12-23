@@ -47,7 +47,7 @@
 |day|string|null: false|
 |time_id|integer|null: false|
 |lesson_type_id|integer|null: false|
-|attendance_status_id|string|null: false|
+|attendance_status_id|integer|null: false|
 |contact|string|null: false|
 |homework_status|string|null: false|
 |quiz|string|-|

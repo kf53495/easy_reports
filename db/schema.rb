@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_162725) do
+ActiveRecord::Schema.define(version: 2020_12_23_125151) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +23,26 @@ ActiveRecord::Schema.define(version: 2020_12_18_162725) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_employees_on_email", unique: true
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
+  end
+
+  create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "date"
+    t.string "day"
+    t.integer "time_id"
+    t.integer "lesson_type_id"
+    t.integer "attendance_status_id"
+    t.string "contact"
+    t.string "homework_status"
+    t.string "quiz"
+    t.string "quiz_result"
+    t.string "quiz_correspondence"
+    t.string "study_material"
+    t.text "lesson_contents"
+    t.string "lesson_status"
+    t.string "retry_time"
+    t.string "homework"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
