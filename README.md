@@ -45,6 +45,7 @@
 | :-: | :-: | :-: |
 |date|date|null: false|
 |day|string|null: false|
+|subject|string|null: false|
 |time_id|integer|null: false|
 |lesson_type_id|integer|null: false|
 |attendance_status_id|integer|null: false|
