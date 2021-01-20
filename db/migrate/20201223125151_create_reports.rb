@@ -4,6 +4,7 @@ class CreateReports < ActiveRecord::Migration[6.0]
             
       t.date :date
       t.string :day
+      t.string :subject
       t.integer :time_id
       t.integer :lesson_type_id
       t.integer :attendance_status_id

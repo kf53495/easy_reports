@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_125151) do
+ActiveRecord::Schema.define(version: 2021_01_09_015814) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_12_23_125151) do
   create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date"
     t.string "day"
+    t.string "subject"
     t.integer "time_id"
     t.integer "lesson_type_id"
     t.integer "attendance_status_id"
@@ -41,6 +42,11 @@ ActiveRecord::Schema.define(version: 2020_12_23_125151) do
     t.string "lesson_status"
     t.string "retry_time"
     t.string "homework"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
