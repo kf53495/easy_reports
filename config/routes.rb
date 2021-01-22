@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   devise_for :employees, controllers: {
     registrations: 'employees/registrations'
   }
-  resources :reports, only: [:index, :show]
+  resources :reports, only: [:index]
   root to: 'reports#index'
 end
