@@ -53,7 +53,7 @@
 |homework_status|string|null: false|
 |quiz|string|-|
 |quiz_result|string|-|
-|quiz_correspondance|string|-|
+|quiz_correspondence|string|-|
 |study_material|未定||
 |lesson_contents|text|null: false|
 |lesson_status|未定|null: false|
