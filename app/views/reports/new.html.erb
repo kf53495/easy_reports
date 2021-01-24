@@ -1,45 +1,63 @@
 <div class="reports-new-main">
   <%= form_with model: @report, local: true do |f| %>
     <div>
+      日付
       <%= f.text_field :date %>
     </div>
     <div>
+      曜日
       <%= f.text_field :day %>
     </div>
     <div>
+      科目
       <%= f.text_field :subject %>
     </div>
     <div>
+      授業時刻
       <%= f.text_field :time %>
     </div>
     <div>
-      <%= f.text_field :lesson_type_id %>
+      授業形式
+      <%= f.collection_select(:lesson_type_id, LessonType.all, :id, :name, {}) %>
     </div>
     <div>
+      出欠
+      <%= f.collection_select(:attendance_status_id, AttendanceStatus.all, :id, :name, {}) %>
+    </div>
+    <div>
+      連絡事項
       <%= f.text_field :contact %>
     </div>
     <div>
-      <%= f.text_field :homeworl_status %>
+      宿題チェック
+      <%= f.text_field :homework_status %>
     </div>
     <div>
+      確認テスト
       <%= f.text_field :quiz %>
     </div>
     <div>
+      結果
       <%= f.text_field :quiz_result %>
     </div>
     <div>
+      教材
       <%= f.text_field :study_material %>
     </div>
     <div>
-      <%= f.text_field :lesson_contents %>
+      授業内容
+      <%= f.text_area :lesson_contents %>
     </div>
     <div>
+      リトライタイム
       <%= f.text_field :retry_time %>
     </div>
     <div>
+      課題
       <%= f.text_field :homework %>
     </div>
     <div>
+      担当講師
       <%= f.text_field :teacher %>
     </div>
     <div>
