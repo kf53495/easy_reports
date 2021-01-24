@@ -18,6 +18,7 @@ class CreateReports < ActiveRecord::Migration[6.0]
       t.string :lesson_status
       t.string :retry_time
       t.string :homework
+      t.string :teacher
       # teacher名の表示はアソシエーションを用いて実装
 
       t.timestamps

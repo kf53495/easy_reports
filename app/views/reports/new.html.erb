@@ -1,7 +1,46 @@
 <div class="reports-new-main">
   <%= form_with model: @report, local: true do |f| %>
     <div>
+      <%= f.text_field :date %>
+    </div>
+    <div>
+      <%= f.text_field :day %>
+    </div>
+    <div>
       <%= f.text_field :subject %>
+    </div>
+    <div>
+      <%= f.text_field :time %>
+    </div>
+    <div>
+      <%= f.text_field :lesson_type_id %>
+    </div>
+    <div>
+      <%= f.text_field :contact %>
+    </div>
+    <div>
+      <%= f.text_field :homeworl_status %>
+    </div>
+    <div>
+      <%= f.text_field :quiz %>
+    </div>
+    <div>
+      <%= f.text_field :quiz_result %>
+    </div>
+    <div>
+      <%= f.text_field :study_material %>
+    </div>
+    <div>
+      <%= f.text_field :lesson_contents %>
+    </div>
+    <div>
+      <%= f.text_field :retry_time %>
+    </div>
+    <div>
+      <%= f.text_field :homework %>
+    </div>
+    <div>
+      <%= f.text_field :teacher %>
     </div>
     <div>
       <%= f.submit '記入完了' %>

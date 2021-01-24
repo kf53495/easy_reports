@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_01_09_015814) do
     t.string "lesson_status"
     t.string "retry_time"
     t.string "homework"
+    t.string "teacher"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
