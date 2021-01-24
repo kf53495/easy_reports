@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
   end
   def create
     @report = Report.new(report_params)
-    if @item.save
+    if @report.save
       redirect_to root_path
     else
       render :new

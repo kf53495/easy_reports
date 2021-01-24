@@ -1,4 +1,10 @@
 <div class="reports-new-main">
   <%= form_with model: @report, local: true do |f| %>
+    <div>
+      <%= f.text_field :subject %>
+    </div>
+    <div>
+      <%= f.submit '記入完了' %>
+    </div>
   <% end %>
 </div>
