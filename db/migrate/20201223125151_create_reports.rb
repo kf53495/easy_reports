@@ -2,7 +2,8 @@ class CreateReports < ActiveRecord::Migration[6.0]
   def change
     create_table :reports do |t|
             
-      t.date :date
+      t.integer :month
+      t.integer :date
       t.string :day
       t.string :subject
       t.string :time

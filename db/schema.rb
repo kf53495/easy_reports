@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(version: 2021_01_09_015814) do
   end
 
   create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "date"
+    t.integer "month"
+    t.integer "date"
     t.string "day"
     t.string "subject"
     t.string "time"

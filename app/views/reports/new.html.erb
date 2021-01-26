@@ -2,7 +2,7 @@
   <%= form_with model: @report, local: true do |f| %>
     <div>
       日付
-      <%= f.text_field :date %>
+      <%= f.text_field :month %><%= f.text_field :date %>
     </div>
     <div>
       曜日
