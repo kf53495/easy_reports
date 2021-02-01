@@ -9,3 +9,7 @@
 <div>
   <%= link_to '新規カルテ作成', new_report_path %>
 </div>
+
+<div>
+  <%= render partial: "report", collection: @reports %>
+</div>

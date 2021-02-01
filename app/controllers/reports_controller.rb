@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   def index
+    @reports = Report.last(8)
   end
   def show
   end
