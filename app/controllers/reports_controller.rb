@@ -2,11 +2,14 @@ class ReportsController < ApplicationController
   def index
     @reports = Report.last(8)
   end
+
   def show
   end
+
   def new
     @report = Report.new
   end
+
   def create
     @report = Report.new(report_params)
     if @report.save
@@ -14,6 +17,10 @@ class ReportsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def search
+    @reports = Report.search(params[:keyword])
   end
 
   private

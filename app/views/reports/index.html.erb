@@ -9,7 +9,12 @@
 <div>
   <%= link_to '新規カルテ作成', new_report_path %>
 </div>
-
+<div>
+  <%= form_with(url: search_reports_path, local: true, method: :get, class: "search-form") do |f| %>
+    <%= f.text_field :keyword, placeholder: "過去のカルテを検索する", class: "search-input" %>
+    <%= f.submit "検索", class: "search-btn" %>
+  <% end %>
+</div>
 <div>
   <%= render partial: "report", collection: @reports %>
 </div>
