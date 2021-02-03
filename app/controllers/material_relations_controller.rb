@@ -1,0 +1,2 @@
+class MaterialRelationsController < ApplicationController
+end
