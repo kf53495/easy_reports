@@ -1,0 +1,9 @@
+<%= form_with model: @study_material, local: true do |f| %>
+  <div>
+  教材名
+  <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.submit '記入完了' %>
+  </div>
+<% end %>
