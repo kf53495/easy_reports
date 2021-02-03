@@ -13,5 +13,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :study_materials, only: [:index, :new, :create]
   root to: 'reports#index'
 end
