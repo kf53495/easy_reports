@@ -1,0 +1,2 @@
+class MaterialRelation < ApplicationRecord
+end
