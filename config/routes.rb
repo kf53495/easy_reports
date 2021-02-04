@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     end
   end
   resources :study_materials, only: [:index, :new, :create]
+  resources :material_relations, only: [:new, :create]
   root to: 'reports#index'
 end
