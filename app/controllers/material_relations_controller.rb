@@ -5,6 +5,7 @@ class MaterialRelationsController < ApplicationController
 
   def create
     @material_relation = MaterialRelation.new(study_material_params)
+    # @study_material = StudyMaterial.find(params[:study_material_id])
     if @material_relation.save
       redirect_to controller: 'study_materials', action: 'index'
     else
@@ -16,6 +17,5 @@ class MaterialRelationsController < ApplicationController
 
   def study_material_params
     params.require(:material_relation).permit(:student_id, :study_material_id)
-    #params.require(:material_relation).permit(:student_id, :study_material_id).merge(student_id: params[:student_id])
   end
 end

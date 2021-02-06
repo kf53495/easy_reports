@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_083257) do
   end
 
   create_table "material_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "material_name"
     t.bigint "student_id"
     t.bigint "study_material_id"
     t.datetime "created_at", precision: 6, null: false

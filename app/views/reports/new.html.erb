@@ -42,7 +42,7 @@
     </div>
     <div>
       教材
-      <%= f.text_field :study_material %>
+      <%= f.collection_select :study_material, MaterialRelation.all, :study_material_id.name, :study_material_id.name, prompt: '選択してください' %>
     </div>
     <div>
       授業内容
@@ -63,4 +63,5 @@
     <div>
       <%= f.submit '記入完了' %>
     </div>
+  <% end %>
 </div>
