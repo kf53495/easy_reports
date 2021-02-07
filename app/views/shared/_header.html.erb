@@ -1,0 +1,21 @@
+<div class="application-header">
+  <div class="easy-reports">
+    EASY REPORTS
+  </div>
+  <div>
+    <div class="user-name">
+      <% if student_signed_in? %>
+        生徒名：<%= current_student.first_name %><%= current_student.last_name %> さん
+      <% elsif teacher_signed_in? %>
+        講師名：<%= current_teacher.first_name %><%= current_teacher.last_name %>
+      <% end %>
+    </div>
+    <div>
+      <% if student_signed_in? %>
+        <%= link_to 'ログアウト', destroy_student_session_path, method: :delete %>
+      <% elsif teacher_signed_in? %>
+        <%= link_to 'ログアウト', destroy_teacher_session_path, method: :delete %>
+      <% end %>
+    </div>
+  </div>
+</div>
