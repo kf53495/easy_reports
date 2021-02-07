@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'choose_student'
+    end
   end
   resources :study_materials, only: [:index, :new, :create]
   resources :material_relations, only: [:new, :create]

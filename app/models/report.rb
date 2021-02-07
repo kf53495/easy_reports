@@ -11,4 +11,8 @@ class Report < ApplicationRecord
       Report.last(8)
     end
   end
+
+  def self.chose_student
+    
+  end
 end

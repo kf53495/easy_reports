@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
-    @material_relation = MaterialRelation.last
+    @material_relations = MaterialRelation.
   end
 
   def create
@@ -22,6 +22,9 @@ class ReportsController < ApplicationController
 
   def search
     @reports = Report.search(params[:keyword])
+  end
+
+  def choose_student
   end
 
   private
