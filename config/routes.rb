@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   devise_for :students, controllers: {
-    registrations: 'students/registrations'
+    registrations: 'students/registrations',
+    sessions: 'students/sessions'
   }
   devise_for :teachers, controllers: {
-    registrations: 'teachers/registrations'
+    registrations: 'teachers/registrations',
+    sessions: 'teachers/sessions'
   }
   devise_for :employees, controllers: {
-    registrations: 'employees/registrations'
+    registrations: 'employees/registrations',
+    sessions: 'employee/sessions'
   }
   resources :reports, only: [:index, :show, :new, :create] do
     collection do

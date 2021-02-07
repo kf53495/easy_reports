@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
+  before_action :move_to_index
+
   def index
     @reports = Report.last(8)
   end
@@ -31,6 +33,12 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:month, :date, :day, :subject, :time_id, :lesson_type_id, :attendance_status_id, :contact, :hpmework_status, :quiz, :quiz_result, :quiz_correspondence, :study_material, :lesson_contents, :lesson_status, :retry_time, :homework, :teacher) #.merge(student_id:)
+  end
+
+  def move_to_index
+    unless employee_signed_in? || student_signed_in? || teacher_signed_in?
+      redirect_to new_student_session_path
+    end
   end
 
 end
