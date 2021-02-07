@@ -8,6 +8,7 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
+    @material_relation = MaterialRelation.last
   end
 
   def create

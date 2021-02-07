@@ -74,10 +74,10 @@ ActiveRecord::Schema.define(version: 2021_02_03_083257) do
 
   create_table "study_materials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.bigint "report_id_id"
+    t.bigint "report_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["report_id_id"], name: "index_study_materials_on_report_id_id"
+    t.index ["report_id"], name: "index_study_materials_on_report_id"
   end
 
   create_table "teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -98,4 +98,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_083257) do
     t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "material_relations", "students"
+  add_foreign_key "material_relations", "study_materials"
+  add_foreign_key "study_materials", "reports"
 end
