@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   resources :reports, only: [:index, :show, :new, :create] do
     collection do
       get 'search'
-    end
-    member do
       get 'choose_student'
     end
   end
