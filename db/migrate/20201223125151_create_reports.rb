@@ -20,7 +20,8 @@ class CreateReports < ActiveRecord::Migration[6.0]
       t.string :retry_time
       t.string :homework
       t.string :teacher
-      # teacher名の表示はアソシエーションを用いて実装
+      t.references :student, foreign_key: true
+      # teacher名の表示はアソシエーションを用いて実装、自動入力のためreferenceは不要(暫定)
 
       t.timestamps
     end

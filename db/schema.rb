@@ -54,8 +54,10 @@ ActiveRecord::Schema.define(version: 2021_02_03_083257) do
     t.string "retry_time"
     t.string "homework"
     t.string "teacher"
+    t.bigint "student_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_reports_on_student_id"
   end
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -100,5 +102,6 @@ ActiveRecord::Schema.define(version: 2021_02_03_083257) do
 
   add_foreign_key "material_relations", "students"
   add_foreign_key "material_relations", "study_materials"
+  add_foreign_key "reports", "students"
   add_foreign_key "study_materials", "reports"
 end
