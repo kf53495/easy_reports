@@ -5,6 +5,10 @@ class ReportsController < ApplicationController
     @reports = Report.last(8)
   end
 
+  def view
+    @reports = Report.last(8)
+  end
+
   def show
   end
 
@@ -27,6 +31,10 @@ class ReportsController < ApplicationController
   end
 
   def choose_student
+    @students = Student.all
+    if params[:student_name]
+     redirect_to root_path
+    end
   end
 
   private
