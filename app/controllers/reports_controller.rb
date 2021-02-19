@@ -1,9 +1,9 @@
 class ReportsController < ApplicationController
-  before_action :move_to_index
+  # before_action :move_to_index
 
-  def index
-    @reports = Report.last(8)
-  end
+  # def index
+  #   @reports = Report.last(8)
+  # end
 
   def view
     @reports = Report.last(8)
@@ -40,7 +40,7 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:month, :date, :day, :subject, :time_id, :lesson_type_id, :attendance_status_id, :contact, :hpmework_status, :quiz, :quiz_result, :quiz_correspondence, :study_material, :lesson_contents, :lesson_status, :retry_time, :homework, :teacher) #.merge(student_id:)
+    params.require(:report).permit(:month, :date, :day, :subject, :time_id, :lesson_type_id, :attendance_status_id, :contact, :hpmework_status, :quiz, :quiz_result, :quiz_correspondence, :study_material, :lesson_contents, :lesson_status, :retry_time, :homework, :teacher)#.merge(student_id:)
   end
 
   def move_to_index

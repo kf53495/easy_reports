@@ -11,9 +11,10 @@ Rails.application.routes.draw do
     registrations: 'employees/registrations',
     sessions: 'employee/sessions'
   }
-  resources :reports, only: [:show, :new, :create] do
+  resources :reports, only: [:show, :create] do
     member do 
       get 'view'
+      get 'new'
     end
     collection do
       get 'search'
