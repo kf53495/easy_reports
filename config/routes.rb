@@ -11,10 +11,9 @@ Rails.application.routes.draw do
     registrations: 'employees/registrations',
     sessions: 'employee/sessions'
   }
-  resources :reports, only: [:show, :create] do
+  resources :reports, only: [:new,:show, :create] do
     member do 
       get 'view'
-      get 'new'
     end
     collection do
       get 'search'
@@ -23,5 +22,5 @@ Rails.application.routes.draw do
   end
   resources :study_materials, only: [:index, :new, :create]
   resources :material_relations, only: [:new, :create]
-  root to: 'reports#view'
+  root to: 'reports#choose_student'
 end
