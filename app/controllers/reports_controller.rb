@@ -5,8 +5,8 @@ class ReportsController < ApplicationController
   #   @reports = Report.last(8)
   # end
 
+
   def view
-    binding.pry
     @reports = Report.last(8)
   end
 
@@ -14,7 +14,6 @@ class ReportsController < ApplicationController
   end
 
   def new
-    binding.pry
     @report = Report.new
     @material_relations = MaterialRelation.last
   end
