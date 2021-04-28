@@ -7,7 +7,7 @@ class ReportsController < ApplicationController
 
 
   def view
-    @reports = Report.last(8)
+    @reports = Report.where(student_id: params[:id])
   end
 
   def show
