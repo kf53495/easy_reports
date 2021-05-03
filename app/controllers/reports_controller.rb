@@ -7,6 +7,7 @@ class ReportsController < ApplicationController
 
 
   def view
+    @student = Student.find(params[:id])
     @reports = Report.where(student_id: params[:id])
   end
 
