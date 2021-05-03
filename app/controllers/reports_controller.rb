@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  # before_action :move_to_index
+  before_action :move_to_index
 
   # def index
   #   @reports = Report.last(8)
