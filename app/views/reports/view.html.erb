@@ -19,7 +19,7 @@
     <%= link_to '教材登録ページへ', study_materials_path %>
   </div>
   <div>
-    <%= link_to '新規カルテ作成', new_report_path, params.merge(student_id: params[:id]) %>
+    <%= link_to '新規カルテ作成', report_path(params[:id]), params.merge(student_id: params[:id]) %>
   </div>
   <% end %>
 </div>
