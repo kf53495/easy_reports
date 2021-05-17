@@ -16,13 +16,15 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
-    @material_relations = MaterialRelation.last
+    @material_name = MaterialRelation.where(student_id: params[:id]).pluck(:material_name)
   end
 
   def create
     @report = Report.new(report_params)
     if @report.save
-      redirect_to report_path(params[:id])
+      student_id = params.require(:report).permit(:student_id).to_s.delete("^0-9")
+      student = Student.find(student_id)
+      redirect_to view_report_path(student.id)
     else
       render :new
     end
@@ -42,7 +44,7 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:month, :date, :day, :subject, :time_id, :lesson_type_id, :attendance_status_id, :contact, :hpmework_status, :quiz, :quiz_result, :quiz_correspondence, :study_material, :lesson_contents, :lesson_status, :retry_time, :homework, :teacher).merge(student_id: params[:id])
+    params.require(:report).permit(:month, :date, :day, :subject, :time_id, :lesson_type_id, :attendance_status_id, :contact, :hpmework_status, :quiz, :quiz_result, :quiz_correspondence, :study_material, :lesson_contents, :lesson_status, :retry_time, :homework, :teacher, :student_id)
   end
 
   def move_to_index
