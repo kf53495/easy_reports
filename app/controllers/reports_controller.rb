@@ -17,6 +17,8 @@ class ReportsController < ApplicationController
   def new
     @report = Report.new
     @material_name = MaterialRelation.where(student_id: params[:id]).pluck(:material_name)
+    @teacher = current_teacher.last_name
+    gon.teacher = @teacher
   end
 
   def create
