@@ -1,3 +1,5 @@
+<%= render "shared/header" %>
+
 <div class="reports-new-main">
   <%= form_with model: @report, local: true do |f| %>
     <div>
@@ -10,7 +12,7 @@
     </div>
     <div>
       科目
-      <%= f.text_field :subject %>
+      <%= f.select :subject, [["--",""],["国語","国語"],["数学","数学"],["理科","理科"],["社会","社会"],["英語","英語"]]%>
     </div>
     <div>
       授業時刻
@@ -40,10 +42,12 @@
       結果
       <%= f.text_field :quiz_result %>
     </div>
+
     <div>
       教材
-      <%= f.collection_select @material_relations, :material_name, :study_material, prompt: '選択してください' %>
+      <%= f.select :study_material, @material_name, prompt: "--" %>
     </div>
+
     <div>
       授業内容
       <%= f.text_area :lesson_contents %>
@@ -53,12 +57,15 @@
       <%= f.text_field :retry_time %>
     </div>
     <div>
-      課題
+      宿題
       <%= f.text_field :homework %>
     </div>
     <div>
       担当講師
       <%= f.text_field :teacher %>
+    </div>
+    <div>
+      <%= f.hidden_field :student_id, value: params[:id] %>
     </div>
     <div>
       <%= f.submit '記入完了' %>
