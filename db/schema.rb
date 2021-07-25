@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_083257) do
     t.string "quiz_result"
     t.string "quiz_correspondence"
     t.string "study_material"
+    t.string "other_study_material"
     t.text "lesson_contents"
     t.string "lesson_status"
     t.string "retry_time"
