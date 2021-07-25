@@ -8,6 +8,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../automatic_input")
 require("../material_name")
+require('jquery')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
