@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   }
   devise_for :employees, controllers: {
     registrations: 'employees/registrations',
-    sessions: 'employee/sessions'
+    sessions: 'employees/sessions'
   }
   resources :reports, only: [:show, :create] do
     member do 
