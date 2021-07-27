@@ -1,5 +1,4 @@
 const setDate = () => {
-  console.log(gon.teacher);
   const date = new Date();
     document.getElementById("report_month").value = date.getMonth()+1;
     document.getElementById("report_date").value = date.getDate();
