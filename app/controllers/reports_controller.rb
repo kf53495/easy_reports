@@ -11,9 +11,6 @@ class ReportsController < ApplicationController
     @reports = Report.where(student_id: params[:id])
   end
 
-  def show
-  end
-
   def new
     @report = Report.new
     @material_name = MaterialRelation.where(student_id: params[:id]).pluck(:material_name)

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     registrations: 'employees/registrations',
     sessions: 'employees/sessions'
   }
-  resources :reports, only: [:show, :create] do
+  resources :reports, only: [:create] do
     member do 
       get 'view'
       get 'new'
