@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     member do 
       get 'view'
       get 'new'
+      get 'add_accounts'
     end
     collection do
       get 'search'

@@ -45,6 +45,9 @@ class ReportsController < ApplicationController
     end
   end
 
+  def add_accounts
+  end
+
   private
 
   def report_params
