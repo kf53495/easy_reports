@@ -47,7 +47,7 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:month, :date, :day, :subject, :time_id, :lesson_type_id, :attendance_status_id, :contact, :homework_status, :quiz, :quiz_result, :quiz_correspondence, :study_material, :other_study_material, :lesson_contents, :lesson_status, :retry_time, :homework, :teacher, :student_id)
+    params.require(:report).permit(:month, :date, :day, :subject, :time, :lesson_type_id, :attendance_status_id, :contact, :homework_status, :quiz, :quiz_result, :quiz_correspondence, :study_material, :other_study_material, :lesson_contents, :lesson_status, :retry_time, :homework, :teacher, :student_id)
   end
 
   def move_to_index
