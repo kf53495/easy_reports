@@ -18,26 +18,32 @@
       授業時刻
       <%= f.text_field :time %>
     </div>
+    
     <div>
       授業形式
       <%= f.collection_select(:lesson_type_id, LessonType.all, :id, :name, {}) %>
     </div>
+
     <div>
       出欠
       <%= f.collection_select(:attendance_status_id, AttendanceStatus.all, :id, :name, {}) %>
     </div>
+
     <div>
       連絡事項
       <%= f.text_field :contact %>
     </div>
+
     <div>
       宿題チェック
       <%= f.text_field :homework_status %>
     </div>
+
     <div>
       確認テスト
       <%= f.text_field :quiz %>
     </div>
+
     <div>
       結果
       <%= f.text_field :quiz_result %>
@@ -46,6 +52,9 @@
     <div>
       教材
       <%= f.select :study_material, @material_name, prompt: "--" %>
+    </div>
+    <div>
+      <%= f.text_field :other_study_material, class: 'other_study_material',placeholder: 'その他の教材名を入力' %>
     </div>
 
     <div>
@@ -64,9 +73,11 @@
       担当講師
       <%= f.text_field :teacher %>
     </div>
+
     <div>
       <%= f.hidden_field :student_id, value: params[:id] %>
     </div>
+
     <div>
       <%= f.submit '記入完了' %>
     </div>

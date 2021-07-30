@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../automatic_input")
-require("../material_name")
+require("../other_selection")
 require('jquery')
 
 
