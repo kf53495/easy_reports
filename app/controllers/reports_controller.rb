@@ -1,11 +1,6 @@
 class ReportsController < ApplicationController
   before_action :move_to_index
 
-  # def index
-  #   @reports = Report.last(8)
-  # end
-
-
   def view
     @student = Student.find(params[:id])
     @reports = Report.where(student_id: params[:id])
@@ -42,9 +37,15 @@ class ReportsController < ApplicationController
   end
 
   def add_accounts
+    if employee_signed_in?
+      redirect_to new_student_session_path
+    end
   end
 
   def back
+    if employee_signed_in?
+      redirect_to new_student_session_path
+    end
   end
 
   private
