@@ -51,7 +51,7 @@ class Employees::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(_resource)
     add_accounts_reports_path
   end
 

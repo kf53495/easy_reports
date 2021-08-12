@@ -17,7 +17,7 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new(report_params)
     if @report.save
-      student_id = params.require(:report).permit(:student_id).to_s.delete("^0-9")
+      student_id = params.require(:report).permit(:student_id).to_s.delete('^0-9')
       student = Student.find(student_id)
       redirect_to view_report_path(student.id)
     else
@@ -31,21 +31,15 @@ class ReportsController < ApplicationController
 
   def choose_student
     @students = Student.all
-    if params[:student_name]
-     redirect_to root_path
-    end
+    redirect_to root_path if params[:student_name]
   end
 
   def add_accounts
-    if employee_signed_in?
-      redirect_to new_student_session_path
-    end
+    redirect_to new_student_session_path if employee_signed_in?
   end
 
   def back
-    if employee_signed_in?
-      redirect_to new_student_session_path
-    end
+    redirect_to new_student_session_path if employee_signed_in?
   end
 
   private
@@ -55,9 +49,6 @@ class ReportsController < ApplicationController
   end
 
   def move_to_index
-    unless employee_signed_in? || student_signed_in? || teacher_signed_in?
-      redirect_to new_student_session_path
-    end
+    redirect_to new_student_session_path unless employee_signed_in? || student_signed_in? || teacher_signed_in?
   end
-
 end

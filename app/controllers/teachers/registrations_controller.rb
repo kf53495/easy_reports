@@ -42,7 +42,7 @@ class Teachers::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name, :first_name,:last_name_kana, :first_name_kana, :subjects, :profile])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name, :first_name, :last_name_kana, :first_name_kana, :subjects, :profile])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -51,7 +51,7 @@ class Teachers::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(_resource)
     back_reports_path
   end
 

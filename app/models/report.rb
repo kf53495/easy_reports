@@ -5,7 +5,7 @@ class Report < ApplicationRecord
   belongs_to :attendance_status
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Report.where('month LIKE(?)', "%#{search}%")
     else
       Report.last(8)
@@ -13,6 +13,5 @@ class Report < ApplicationRecord
   end
 
   def self.chose_student
-    
   end
 end

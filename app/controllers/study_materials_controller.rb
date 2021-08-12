@@ -20,7 +20,4 @@ class StudyMaterialsController < ApplicationController
   def study_material_params
     params.require(:study_material).permit(:name)
   end
-
-
-
 end
