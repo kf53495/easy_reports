@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     end
     collection do
       get 'add_accounts'
+      get 'get'
       get 'search'
       get 'choose_student'
     end
