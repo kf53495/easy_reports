@@ -1,0 +1,85 @@
+<%= render "shared/header" %>
+
+<div class="reports-new-main">
+  <%= form_with model: @report, local: true do |f| %>
+    <div>
+      日付
+      <%= f.text_field :month %><%= f.text_field :date %>
+    </div>
+    <div>
+      曜日
+      <%= f.text_field :day %>
+    </div>
+    <div>
+      科目
+      <%= f.select :subject, [["--",""],["国語","国語"],["数学","数学"],["理科","理科"],["社会","社会"],["英語","英語"]]%>
+    </div>
+    <div>
+      授業時刻
+      <%= f.text_field :time %>
+    </div>
+    
+    <div>
+      授業形式
+      <%= f.collection_select(:lesson_type_id, LessonType.all, :id, :name, {}) %>
+    </div>
+
+    <div>
+      出欠
+      <%= f.collection_select(:attendance_status_id, AttendanceStatus.all, :id, :name, {}) %>
+    </div>
+
+    <div>
+      連絡事項
+      <%= f.text_field :contact %>
+    </div>
+
+    <div>
+      宿題チェック
+      <%= f.text_field :homework_status %>
+    </div>
+
+    <div>
+      確認テスト
+      <%= f.text_field :quiz %>
+    </div>
+
+    <div>
+      結果
+      <%= f.text_field :quiz_result %>
+    </div>
+
+    <div>
+      教材
+      <%= f.select :study_material, @material_name, prompt: "--" %>
+    </div>
+    <div>
+      <%= f.text_field :other_study_material, class: 'other_study_material',placeholder: 'その他の教材名を入力' %>
+    </div>
+
+    <div>
+      授業内容
+      <%= f.text_area :lesson_contents %>
+    </div>
+    <div>
+      リトライタイム
+      <%= f.text_field :retry_time %>
+    </div>
+    <div>
+      宿題
+      <%= f.text_field :homework %>
+    </div>
+    <div>
+      担当講師
+      <%= f.text_field :teacher %>
+    </div>
+
+    <div>
+      <%= f.hidden_field :student_id, value: params[:id] %>
+    </div>
+
+    <div>
+      <%= f.submit '記入完了' %>
+    </div>
+  <% end %>
+</div>

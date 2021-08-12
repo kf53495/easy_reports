@@ -1,0 +1,15 @@
+.application-header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #bce3e8;
+  margin: 5px;
+  padding: 5px;
+}
+
+.easy-reports{
+  margin-left: 20px;
+}
+
+.user-name{
+  margin-right: 20px;
+}

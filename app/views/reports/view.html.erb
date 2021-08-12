@@ -1,0 +1,25 @@
+<%= render "shared/header" %>
+
+<div>
+  <% if teacher_signed_in? %>
+  <div>
+  <%= @student.last_name %> <%= @student.first_name %> さんのカルテ
+  </div>
+  <div>
+    <%= link_to '教材登録ページへ', study_materials_path %>
+  </div>
+  <div>
+    <%= link_to '新規カルテ作成', report_path(params[:id]), params.merge(student_id: params[:id]) %>
+  </div>
+  <% end %>
+</div>
+
+<div>
+  <%= form_with(url: search_reports_path, local: true, method: :get, class: "search-form") do |f| %>
+    <%= f.text_field :keyword, placeholder: "過去のカルテを検索する", class: "search-input" %>
+    <%= f.submit "検索", class: "search-btn" %>
+  <% end %>
+</div>
+<div>
+  <%= render partial: "report", collection: @reports %>
+</div>

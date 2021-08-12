@@ -1,0 +1,9 @@
+登録が完了しました。
+
+<div>
+  <% if teacher_signed_in? %>
+    <%= link_to "homeに戻る", destroy_teacher_session_path, method: :delete %>
+  <% elsif student_signed_in? %>
+    <%= link_to "homeに戻る", destroy_student_session_path, method: :delete %>
+  <% end %>
+</div>

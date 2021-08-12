@@ -33,8 +33,6 @@
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|grade_id|references|foreign_key: true
-|gender_id|references|foreign_key: true
 
 ## Association
 -has_many reports
@@ -45,17 +43,18 @@
 | :-: | :-: | :-: |
 |date|date|null: false|
 |day|string|null: false|
-|time_id|integer|null: false|
+|subject|string|null: false|
+|time_id|integer|null: false| いったん手動入力で
 |lesson_type_id|integer|null: false|
-|attendance_status_id|string|null: false|
+|attendance_status_id|integer|null: false|
 |contact|string|null: false|
 |homework_status|string|null: false|
 |quiz|string|-|
 |quiz_result|string|-|
-|quiz_correspondance|string|-|
+|quiz_correspondence|string|-|　あと
 |study_material|未定||
 |lesson_contents|text|null: false|
-|lesson_status|未定|null: false|
+|lesson_status|未定|null: false| あと
 |retry_time|text|null: false|
 |homework|text|null: false|
 |teacher|string|null: false|自動入力|

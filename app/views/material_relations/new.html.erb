@@ -1,0 +1,15 @@
+<div>
+  <%= form_with model: @material_relation, local: true do |f| %>
+    <div>
+      生徒選択
+      <%= f.collection_select :student_id, Student.all, :id, :first_name, prompt: '選択してください' %>
+    </div>
+    <div>
+      教材選択
+      <%= f.collection_select :study_material_id, StudyMaterial.all, :id, :name, prompt: '選択してください' %>
+    </div>
+    <div>
+      <%= f.submit '記入完了' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,57 @@
+<div class='report-flame'>
+  <div>
+    <%= report.month %>/<%= report.date %> (<%= report.day %>)
+  </div>
+  <div>
+    科目：<%= report.subject %> <%= report.attendance_status.name %>
+  </div>
+    
+  <div>
+    授業時刻：<%= report.time %>
+  </div>
+
+  <div>
+    授業種別：<%= report.lesson_type.name %>
+  </div>
+
+  <div>
+    連絡事項：<%= report.contact %>
+  </div>
+
+  <div>
+    宿題チェック：<%= report.homework_status %>
+  </div>
+
+  <div>
+    確認テスト：<%= report.quiz %>
+  </div>
+
+  <div>
+    結果：<%= report.quiz_result %>
+  </div>
+
+  <div>
+    教材：
+    <% if report.study_material == 'その他' %>
+      <%= report.other_study_material %>
+    <% else %>
+      <%= report.study_material %>
+    <% end %>
+  </div>
+
+  <div>
+    授業内容：<%= report.lesson_contents %>
+  </div>
+
+  <div>
+    リトライタイム：<%= report.retry_time %>
+  </div>
+
+  <div>
+    宿題：<%= report.homework %>
+  </div>
+
+  <div>
+    担当講師：<%= report.teacher %>
+  </div>
+</div>

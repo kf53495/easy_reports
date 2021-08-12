@@ -1,0 +1,9 @@
+<h2>
+  生徒選択
+</h2>
+
+<% @students.each do |student| %>
+  <div>
+  <%= link_to student.first_name ,view_report_path(student.id) %>
+  </div>
+<% end %>
