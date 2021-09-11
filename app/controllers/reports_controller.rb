@@ -35,11 +35,11 @@ class ReportsController < ApplicationController
   end
 
   def add_accounts
-    redirect_to new_student_session_path if employee_signed_in?
+    redirect_to new_student_session_path unless employee_signed_in?
   end
 
   def back
-    redirect_to new_student_session_path if employee_signed_in?
+    redirect_to new_student_session_path unless employee_signed_in?
   end
 
   private
